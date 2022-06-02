@@ -2,7 +2,6 @@ import {
   Routes, Route, useNavigate
 } from "react-router-dom";
 
-// import './App.css';
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import BinPage from "./components/BinPage";

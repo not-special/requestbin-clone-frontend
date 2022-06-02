@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import dbOps from '../services/db';
-import Body from './Body';
 
 const BinPage = () => {
   const [requests, setRequests] = useState([]);
@@ -9,10 +8,9 @@ const BinPage = () => {
   const ulStyle = {
     listStyleType: 'none',
     borderStyle: 'solid',
-    marginLeft: '15px',
-    width: '75%'
+    marginLeft: '25px',
+    marginRight: '25px'
   };
-
 
   useEffect(() => {
     dbOps
@@ -50,10 +48,9 @@ const BinPage = () => {
         { requests.map(request => 
             <ul key={request.id} style={ulStyle}>
               <li>
-                <p>Date: {"TEST DATE"}</p>
-                <p>Type: {request.http_method}</p>
+                <p><strong>HTTP:</strong> {request.http_method}</p>
                 <div>
-                  <p>Headers: </p>
+                  <p><strong>Headers:</strong></p>
                   <ul>
                     <li>host: {JSON.parse(JSON.stringify(request.headers))["host"]}</li>
                     <li>accept: {JSON.parse(JSON.stringify(request.headers))["accept"]}</li>
@@ -63,8 +60,8 @@ const BinPage = () => {
                   </ul>
                 </div>
                 <div>
-                  <p>Body: </p>
-                  <Body json={request.payload}/>
+                  <p><strong>Body:</strong></p>
+                  <div><pre>{JSON.stringify(request.payload, null, 5)}</pre></div>
                 </div>
               </li>
             </ul>
