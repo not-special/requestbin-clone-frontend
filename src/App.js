@@ -13,7 +13,7 @@ const App = () => {
 	
 	const handleClick = () => {
 		dbOps.createBin().then(data => {
-      navigate(data);
+      navigate(data.path);
 		});
 	};
 

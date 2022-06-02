@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import dbOps from '../services/db';
-// import Body from './Body';
-// import ReactJson from 'react-json-view';
+import Body from './Body';
 
 const BinPage = () => {
   const [requests, setRequests] = useState([]);
@@ -19,7 +18,7 @@ const BinPage = () => {
     dbOps
       .getRequests(path)
       .then(data => {
-        setRequests(data);
+        setRequests(data.requests);
       })
       .catch(error => {
         throw new Error ('could not fetch requests')
@@ -65,8 +64,7 @@ const BinPage = () => {
                 </div>
                 <div>
                   <p>Body: </p>
-                  {/* <ReactJson src={request.payload} /> */}
-                  {JSON.stringify(request.payload, null, 5)}
+                  <Body json={request.payload}/>
                 </div>
               </li>
             </ul>
