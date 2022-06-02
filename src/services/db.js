@@ -1,6 +1,6 @@
 import axios from "axios";
-const root = "https://snaggl.corkboard.dev";
-// const root = "https://requestbin.scttgrhm.dev";
+// const root = "https://snaggl.corkboard.dev";
+const root = "https://requestbin.scttgrhm.dev";
 
 const createBin = () => {
   // let request = axios.post("http://localhost:3001/bin"); // test
