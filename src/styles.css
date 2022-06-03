@@ -51,12 +51,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* margin-top: 35px; */
+  /* margin-top: 10px; */
 }
 
 .main-box {
-  font-size: 26px;
-  padding-top: 10px;
+  font-size: 20px;
+  padding-top: 25px;
   padding-left: 25px;
   padding-right: 25px;
   text-align: center;
@@ -66,12 +66,12 @@ body {
   border-radius: 15px;
   background-color: #DCC7AA;
   margin: auto;
-  width: 625px;
-  height: 470px;
+  width: 600px;
+  height: 375px;
 }
 
 .button {
-  font-size: 30px;
+  font-size: 25px;
   color: #6B7A8F;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
@@ -80,6 +80,7 @@ body {
   width: 300px;
   background-color: #F7882F;
   border: 7px solid #F7C331;
+  margin-top: 25px;
 }
 
 .text-box {
