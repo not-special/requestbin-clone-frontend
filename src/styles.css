@@ -71,6 +71,7 @@ body {
 }
 
 .button {
+  cursor: pointer;
   font-size: 25px;
   color: #6B7A8F;
   -webkit-border-radius: 12px;
