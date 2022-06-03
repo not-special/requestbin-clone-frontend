@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import dbOps from '../services/db';
+import parseJSONStr from '../services/parseJSONStr';
 
 const BinPage = () => {
   const [requests, setRequests] = useState([]);
@@ -84,7 +85,7 @@ const BinPage = () => {
                 </div>
                 <div>
                   <p><strong>Body:</strong></p>
-                  <div><pre>{JSON.stringify(request.payload, null, 5)}</pre></div>
+                  <div><pre>{JSON.stringify(parseJSONStr(request.payload), null, 5)}</pre></div>
                 </div>
               </li>
             </ul>
