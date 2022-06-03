@@ -19,12 +19,15 @@ const App = () => {
 	};
 
   return (
-    <div className="App">
-      <Navbar/>
-			<Routes>
-				<Route path="/" element={ <Home handleClick={handleClick} />} />
-				<Route path={"/:path"} element={ <BinPage />} />
-			</Routes>
+    <div>
+      <div className="App">
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={ <Home handleClick={handleClick} />} />
+          <Route path={"/:path"} element={ <BinPage />} />
+        </Routes>
+        <div className='push'></div>
+      </div>
 			<Footer />
     </div>
   );
