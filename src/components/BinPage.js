@@ -52,11 +52,11 @@ const BinPage = () => {
           <h4>Your bin is empty. Make a request to get started...</h4>
           <h5>cURL</h5>
           <pre style={cliStyle}>
-            curl -X POST -d &quot;fizz=buzz&quot; http://v1.requestbin.net/r/fot5ok5r
+            {`curl -X POST -d "hello world" https://snaggl.corkboard.dev/api/bins/${path}`}
           </pre>
           <h5>PowerShell</h5>
           <pre style={cliStyle}>
-          powershell -NoLogo -Command &quot;(New-Object System.Net.WebClient).DownloadFile(&apos;http://v1.requestbin.net/r/fot5ok5r&apos;, &apos;C:\Windows\Temp\fot5ok5r.txt&apos;)&quot;
+          {`powershell -NoLogo -Command "(New-Object System.Net.WebClient).DownloadFile('https://snaggl.corkboard.dev/api/bins/${path}', 'C:\\Windows\\Temp\\fot5ok5r.txt')"`}
           </pre>
       </div>
     )
