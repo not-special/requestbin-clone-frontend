@@ -8,9 +8,31 @@ const BinPage = () => {
   const ulStyle = {
     listStyleType: 'none',
     borderStyle: 'solid',
-    marginLeft: '25px',
-    marginRight: '25px'
+    marginLeft: '75px',
+    marginRight: '75px'
   };
+
+  const liStyle = {
+    overflow: 'auto',
+    maxHeight: '500px',
+    color: 'white'
+  };
+
+  const emptyBinStyle = {
+    marginLeft: '35px',
+    marginRight: '35px',
+    color: 'white'
+  }
+
+  const cliStyle = {
+    borderStyle: 'none',
+    borderRadius: '10px',
+    color: 'chartreuse',
+    backgroundColor: 'gray',
+    padding: '10px',
+    overflow: 'auto',
+    width: '65%'
+  }
 
   useEffect(() => {
     dbOps
@@ -25,29 +47,30 @@ const BinPage = () => {
 
   if (requests.length === 0) {
     return (
-      <div>
-      <h2>Bin URL: </h2>
-      <h3>{ path }</h3>
-      <h4>Make a request to get started</h4>
-      <h5>cURL</h5>
-      <pre>
-        curl -X POST -d &quot;fizz=buzz&quot; http://v1.requestbin.net/r/fot5ok5r
-      </pre>
-      <h5>PowerShell</h5>
-      <pre>
-      powershell -NoLogo -Command &quot;(New-Object System.Net.WebClient).DownloadFile(&apos;http://v1.requestbin.net/r/fot5ok5r&apos;, &apos;C:\Windows\Temp\fot5ok5r.txt&apos;)&quot;
-      </pre>
-    </div>
+      <div style={emptyBinStyle}>
+        <h2>Bin URL: { path }</h2>
+          <h4>Your bin is empty. Make a request to get started...</h4>
+          <h5>cURL</h5>
+          <pre style={cliStyle}>
+            curl -X POST -d &quot;fizz=buzz&quot; http://v1.requestbin.net/r/fot5ok5r
+          </pre>
+          <h5>PowerShell</h5>
+          <pre style={cliStyle}>
+          powershell -NoLogo -Command &quot;(New-Object System.Net.WebClient).DownloadFile(&apos;http://v1.requestbin.net/r/fot5ok5r&apos;, &apos;C:\Windows\Temp\fot5ok5r.txt&apos;)&quot;
+          </pre>
+      </div>
     )
   }
 
   return (
     <div>
-      <h3>Request History for: {path}</h3>
+      <div className="bin-header-container">
+        <h3 className='bin-header'>Request History for Bin: {path}</h3>
+      </div>
       <div>
         { requests.map(request => 
             <ul key={request.id} style={ulStyle}>
-              <li>
+              <li style={liStyle}>
                 <p><strong>HTTP:</strong> {request.http_method}</p>
                 <div>
                   <p><strong>Headers:</strong></p>

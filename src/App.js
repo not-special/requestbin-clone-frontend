@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import BinPage from "./components/BinPage";
 import dbOps from "./services/db.js";
 import Footer from "./components/Footer";
-import "./styles.css";
+
 
 const App = () => {
 	const navigate = useNavigate();
