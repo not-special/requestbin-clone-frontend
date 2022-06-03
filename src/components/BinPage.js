@@ -48,7 +48,7 @@ const BinPage = () => {
   if (requests.length === 0) {
     return (
       <div style={emptyBinStyle}>
-        <h2>Bin URL: { path }</h2>
+        <h2>Bin URL: {`https://snaggl.corkboard.dev/api/bins/${path}`}</h2>
           <h4>Your bin is empty. Make a request to get started...</h4>
           <h5>cURL</h5>
           <pre style={cliStyle}>
