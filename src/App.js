@@ -22,6 +22,7 @@ const App = () => {
     <div>
       <div className="App">
         <Navbar/>
+				<div className="space"><p></p></div>
         <Routes>
           <Route path="/" element={ <Home handleClick={handleClick} />} />
           <Route path={"/:path"} element={ <BinPage />} />
